@@ -1,5 +1,10 @@
-<div style="background: url('{{game.background_image}}');">
+
+<div>
     <div class="details">
+        <br>
+        <div style="text-align: -webkit-center;">
+            <mat-spinner *ngIf="loading"></mat-spinner>
+        </div>
     <div class="game-banner">
     </div>
     <div class="game-content">

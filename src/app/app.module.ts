@@ -20,7 +20,7 @@ import { HttpErrorsInterceptor } from '../interceptors/http-error.interceptor';
 import { DetailsComponent } from './components/details/details.component';
 import { GameTabsComponent } from './components/game-tabs/game-tabs.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -42,6 +42,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     MatTabsModule,
     MatIconModule,
     MatFormFieldModule,
+    MatProgressSpinnerModule,
     RouterModule, AppRoutingModule
   ],
   providers: [

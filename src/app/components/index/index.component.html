@@ -12,7 +12,7 @@
         </mat-select>
     </mat-form-field>
 </div>
-<div class="games">
+<div class="games" *ngIf="!loading">
     <div *ngFor="let game of games">
     <div class="game" (click)="openGameDetails(game.id)">
         <div class="game-thumb-container">
@@ -29,4 +29,7 @@
         </div>
     </div>
 </div>
+</div>
+<div class="games">
+    <mat-spinner *ngIf="loading" style="text-align: center;"></mat-spinner>
 </div>

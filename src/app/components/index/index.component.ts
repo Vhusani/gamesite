@@ -16,6 +16,7 @@ export class IndexComponent implements OnInit, OnDestroy {
   public games!: Array<Game>;
   private routeSub!: Subscription;
   private gameSub!: Subscription;
+  loading = false;
    
   constructor(private httpService: HttpService, private activatedRoute: ActivatedRoute, private router: Router, private activatedRouter: ActivatedRoute) {
 
@@ -33,9 +34,11 @@ export class IndexComponent implements OnInit, OnDestroy {
   }
 
   searchGames(sort: string, search?: string){
+    this.loading = true;
     this.gameSub = this.httpService.getGameList(sort, search).subscribe((gameList: APIResponse<Game>) => {
       this.games = gameList.results;
       console.log(gameList);
+      this.loading = false;
     });
   }
 
